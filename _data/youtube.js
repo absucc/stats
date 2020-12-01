@@ -1,6 +1,7 @@
 var request = require("sync-request");
+var key = "AIzaSyCUWPRUQYHaqKub36FNPHIi6uADh3F-KjQ"
 // make the request
-var res = request("GET", `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${process.env.YOUTUBE_CHANNEL_ID}&key=${process.env.YOUTUBE_API_KEY}`,{
+var res = request("GET", `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCkuKzwbQX0WFG2v457QTOSw&key=${key}`,{
   headers: {
     'user-agent': 'RemiixInc'
   }});
