@@ -24,14 +24,14 @@
       type="image/x-icon"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
 
     <script>
       /* Force HTTPS */ if (location.protocol == "http:")
         location.protocol = "https:";
     </script>
   </head>
-  <body>
+  <body id="body">
     {{ content | safe }}
   </body>
 </html>

@@ -5,7 +5,7 @@ layout: base.html
 <div class="box">
   <div class="container">
     <a href="https://github.com/remiixinc">
-      <img border="0" alt="" src="./github.png" width="18" />
+      <img border="0" alt="" src="/img/github.png" width="18" />
       <span><b>GitHub</b></span
       ><br />
       <span id="git">
@@ -16,96 +16,32 @@ layout: base.html
     </a>
 
     <a href="https://glitch.com/@Remiix">
-      <img border="0" alt="" src="./glitch.png" width="20" />
+      <img border="0" alt="" src="/img/glitch.png" width="20" />
       <span><b>Glitch</b></span
       ><br />
-      <span id="glitch"></span>
+      <span id="glitch">
+      {{ glitch.Remiix.thanksCount }} thanks<br>
+      </span>
     </a>
 
     <a href="https://www.youtube.com/channel/UCkuKzwbQX0WFG2v457QTOSw">
-      <img border="0" alt="" src="./youtube.png" width="18" />
+      <img border="0" alt="" src="/img/youtube.png" width="18" />
       <span><b>YouTube</b></span
       ><br />
-      <span id="yt"></span>
+      <span id="yt">
+     {{ youtube.subscriberCount }} subscribers<br>
+    {{ youtube.viewCount }} views<br>
+    {{ youtube.videoCount }} videos
+      </span>
     </a>
 
     <img
       id="darklight"
-      src="./moon.png"
+      src="/img/moon.png"
       style="position:fixed;bottom:10px;right:10px;padding:0px;margin:0px;width:28px"
     />
   </div>
 </div>
-
-<script>
-  $(document).ready(function() {
-    // GitHub Stats
-    const x = new XMLHttpRequest();
-    x.onload = () => {
-      if (x.status == 200) {
-        var jso = JSON.parse(x.response);
-        document.querySelector("#git").innerHTML =
-          jso.public_repos +
-          " repos<br>" +
-          jso.followers +
-          " followers<br>" +
-          jso.following +
-          " following<br>";
-      } else {
-        console.error("Error!");
-      }
-    };
-    x.open("GET", "https://api.github.com/users/RemiixInc");
-    x.send();
-  });
-</script>
-<script>
-  $(document).ready(function() {
-    const xh = new XMLHttpRequest();
-    xh.onload = () => {
-      if (xh.status == 200) {
-        var js = JSON.parse(xh.response);
-        document.querySelector("#glitch").innerHTML =
-          js.Remiix.thanksCount + " thanks<br>";
-      } else {
-        console.error("Error!");
-      }
-    };
-    xh.open("GET", "https://api.glitch.com/v1/users/by/login?login=Remiix");
-    xh.send();
-  });
-</script>
-<script>
-  $(document).ready(function() {
-    // YouTube Stats
-    const channelid = "UCkuKzwbQX0WFG2v457QTOSw";
-    const apikey = "AIzaSyCUWPRUQYHaqKub36FNPHIi6uADh3F-KjQ";
-    const xhr = new XMLHttpRequest();
-    xhr.onload = () => {
-      if (xhr.status == 200) {
-        var json = JSON.parse(xhr.response);
-        var [items] = json.items;
-        document.querySelector("#yt").innerHTML =
-          items.statistics.subscriberCount +
-          " subscribers<br>" +
-          items.statistics.viewCount +
-          " views<br>" +
-          items.statistics.videoCount +
-          " videos";
-      } else {
-        console.error("Error!");
-      }
-    };
-    xhr.open(
-      "GET",
-      "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" +
-        channelid +
-        "&key=" +
-        apikey
-    );
-    xhr.send();
-  });
-</script>
 <script>
   // Theme Default
   const userPrefersDark =
