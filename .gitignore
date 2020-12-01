@@ -1,3 +1,4 @@
 _site
+.env
 shrinkwrap.yaml
 .glitch-assets
