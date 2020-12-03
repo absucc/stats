@@ -2,12 +2,11 @@
   "name": "Stats | RemiixInc",
   "version": "1.0.2",
   "description": "RemiixInc social stats page.",
-  "main": "eleventy",
+  "main": "",
   "scripts": {
     "start": "eleventy"
   },
   "dependencies": {
-    "express": "^4.17.1",
     "@11ty/eleventy": "^0.11.1",
     "http-server": "^0.12.3",
     "sync-request": "^6.1.0"
