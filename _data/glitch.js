@@ -2,10 +2,10 @@ var request = require("sync-request");
 // make the request
 var res = request(
   "GET",
-  "https://api.glitch.com/v1/users/by/login?login=Remiix",
+  "https://api.glitch.com/v1/users/by/login?login=absucc",
   {
     headers: {
-      "user-agent": "RemiixInc"
+      "user-agent": "absucc"
     }
   }
 );
